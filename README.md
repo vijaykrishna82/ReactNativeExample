@@ -19,9 +19,16 @@
 - Add Login.js
 - Add Images to Images folder
 
-# 3. Connecting to API
+# 3. Adding Base64 Encoding
 
-API is available from https://developer.github.com
+1. Install buffer package :
+
+` npm install buffer --save`
+
+2. Use the buffer package in code:
+
+` var buffer = require('buffer'); `
+
 
 
 
@@ -45,3 +52,6 @@ Actual {/*This is a JSX Comment*/}
 
 Use ActivityIndicator instead.
 
+## 4. Authentication didn't work for correct credentials
+
+Make sure in the authorization header, there is a space after Basic

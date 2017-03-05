@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Buffer from 'buffer';
 import {
   AppRegistry,
   StyleSheet,
@@ -51,7 +52,28 @@ export default class Login extends Component{
     }
 
     onLoginPressed(){
-        console.log("login presssed, username:" + this.state.username + ", password: " + this.state.password);
+        
+        var usernamePassword = this.state.username + ":" + this.state.password;
+        var b = new Buffer.Buffer(usernamePassword);
+        var base64UserNamePassword= b.toString('base64');
+        console.log("base64:" + base64UserNamePassword);
+
+        this.setState({showProgress: true});
+        fetch('https://api.github.com/user',{
+            headers:{
+                'Authorization' : 'Basic ' + base64UserNamePassword
+            }
+        }).then((response)=>{
+            return response.json();
+        })
+        .then((results)=>{
+            console.log(results);
+            this.setState({showProgress: false});
+        });
+        
+    }
+
+    onGetRepositories(){
         this.setState({showProgress: true});
 
         fetch('https://api.github.com/search/repositories?q=react')
