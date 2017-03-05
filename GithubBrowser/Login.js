@@ -53,6 +53,15 @@ export default class Login extends Component{
     onLoginPressed(){
         console.log("login presssed, username:" + this.state.username + ", password: " + this.state.password);
         this.setState({showProgress: true});
+
+        fetch('https://api.github.com/search/repositories?q=react')
+        .then((response)=>{
+            return response.json();
+        })
+        .then((results)=>{
+            console.log(results);
+            this.setState({showProgress: false});
+        });
     }
 }
 

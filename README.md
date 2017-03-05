@@ -19,7 +19,14 @@
 - Add Login.js
 - Add Images to Images folder
 
-# 3. Trivia
+# 3. Connecting to API
+
+API is available from https://developer.github.com
+
+
+
+
+# 4. Trivia and Issues
 
 ## 1. Setting boolean properties in JSX
 Issue: Get warning: "Failed propType: Invalid prop `x` of type `string` supplied to `Draggable`, expected `number`. Check the render method of `GridItem`
@@ -37,3 +44,4 @@ Actual {/*This is a JSX Comment*/}
 ## 3. ActivityIndicatorIOS is no longer supported
 
 Use ActivityIndicator instead.
+
