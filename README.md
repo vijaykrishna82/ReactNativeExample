@@ -17,5 +17,15 @@
 3. Make changes in index.ios.js
 
 - Add Login.js
-- 
+- Add Images to Images folder
 
+4. Issues
+
+Issue:
+
+Get warning: "Failed propType: Invalid prop `x` of type `string` supplied to `Draggable`, expected `number`. Check the render method of `GridItem`
+
+Solution:
+
+boolean properties:
+Set boolean properties as {true}, not "true"
