@@ -6,7 +6,8 @@ import {
   View,
   TextInput,
   Image,
-  TouchableHighlight
+  TouchableHighlight,
+  ActivityIndicator
 } from 'react-native';
 
 
@@ -15,7 +16,9 @@ export default class Login extends Component{
     constructor(props){
         
         super(props);
-        this.state = {};
+        this.state = {
+            showProgress:false
+        };
     }
 
     render(){
@@ -38,13 +41,18 @@ export default class Login extends Component{
                    <TouchableHighlight style={styles.button} onPress={this.onLoginPressed.bind(this)}>
                        <Text style={styles.buttonText} >Login</Text>
                    </TouchableHighlight>
+
+                   <ActivityIndicator animating={this.state.showProgress} size="large" style={styles.progress}/>
+
                 </View>
+
 
         );
     }
 
     onLoginPressed(){
         console.log("login presssed, username:" + this.state.username + ", password: " + this.state.password);
+        this.setState({showProgress: true});
     }
 }
 
@@ -89,8 +97,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 22,
         fontWeight: 'bold'
-    }
+    },
 
+    progress:{
+        marginTop:20
+    }
     
 });
 

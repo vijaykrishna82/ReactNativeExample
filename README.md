@@ -19,13 +19,21 @@
 - Add Login.js
 - Add Images to Images folder
 
-4. Issues
+# 3. Trivia
 
-Issue:
-
-Get warning: "Failed propType: Invalid prop `x` of type `string` supplied to `Draggable`, expected `number`. Check the render method of `GridItem`
+## 1. Setting boolean properties in JSX
+Issue: Get warning: "Failed propType: Invalid prop `x` of type `string` supplied to `Draggable`, expected `number`. Check the render method of `GridItem`
 
 Solution:
-
 boolean properties:
 Set boolean properties as {true}, not "true"
+
+## 2. Adding comments in JSX
+
+Expected: <!-- This is not a JSX Comment -->
+
+Actual {/*This is a JSX Comment*/}
+
+## 3. ActivityIndicatorIOS is no longer supported
+
+Use ActivityIndicator instead.
