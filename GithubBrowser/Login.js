@@ -11,20 +11,40 @@ import {
 
 
 export default class Login extends Component{
+
+    constructor(props){
+        
+        super(props);
+        this.state = {};
+    }
+
     render(){
         return(
                 <View style={styles.container}>
                    <Image style={styles.logo} source={require('./Images/Octocat.png')}/>
                    <Text style={styles.heading}> GitHub Browser </Text>
-                   <TextInput style={styles.input} autoFocus={true} keyboardType="email-address"  placeholder="Github Username"/>
-                   <TextInput style={styles.input} secureTextEntry={true}  placeholder="Github Password"/>
+                   <TextInput 
+                        onChangeText={(text)=>this.setState({username:text})}
+                        style={styles.input} 
+                        autoFocus={true} 
+                        keyboardType="email-address"  
+                        placeholder="Github Username"/>
+                   <TextInput 
+                        onChangeText={(text)=>this.setState({password:text})}
+                        style={styles.input} 
+                        secureTextEntry={true}  
+                        placeholder="Github Password"/>
                 
-                   <TouchableHighlight style={styles.button}>
+                   <TouchableHighlight style={styles.button} onPress={this.onLoginPressed.bind(this)}>
                        <Text style={styles.buttonText} >Login</Text>
                    </TouchableHighlight>
                 </View>
 
         );
+    }
+
+    onLoginPressed(){
+        console.log("login presssed, username:" + this.state.username + ", password: " + this.state.password);
     }
 }
 
