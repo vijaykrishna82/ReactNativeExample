@@ -12,7 +12,7 @@ export default class Login extends Component{
     render(){
         return(
                 <View style={styles.container}>
-                    <Image style={styles.logo} source={require('./Octocat.png')}/>
+                    <Image style={styles.logo} source={require('./Images/Octocat.png')}/>
                    <Text> Login Component </Text>
                 </View>
 
@@ -27,6 +27,10 @@ const styles = StyleSheet.create({
         borderStyle: 'dashed',
         borderWidth: 1,
         flex: 1
+    },
+    logo:{
+        width: 100,
+        height: 100
     }
 });
 
